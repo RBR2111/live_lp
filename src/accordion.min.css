@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/**
+ * Accordion v3.3.2
+ * Lightweight and accessible accordion module created in pure Javascript
+ * https://github.com/michu2k/Accordion
+ *
+ * Copyright (c) Michał Strumpf
+ * Published under MIT License
+ */
+
+.ac .ac-trigger {
+  text-align: left;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  position: relative;
+  text-decoration: none;
+  margin: 0;
+  border: 0;
+}
+.ac .ac-trigger::after {
+  display: block;
+  content: url("../src/accordion_icon-open.svg");
+  width: fit-content;
+  height: fit-content;
+  transform-origin: center;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.ac.is-active .ac-trigger::after {
+  transform: rotate(45deg);
+}
+.ac .ac-trigger:focus {
+  opacity: 0.3;
+}
+.ac .ac-panel {
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-timing-function: ease;
+}
+
+.ac.is-active .ac-header {
+  border-radius: 15px 15px 0 0;
+}
+
+.ac.js-enabled .ac-panel {
+  visibility: hidden;
+}
+.ac.is-active .ac-panel {
+  visibility: visible;
+}
